@@ -24,4 +24,32 @@ public class Snippets {
     int[] answerQueries(List<Integer> queries, int N) {
         return new int[0];
     }
+
+    private static void testBinarySearch() {
+        System.out.println(binarySearch(new int[]{-1,0,3,5,9,12}, 9));
+        System.out.println(binarySearch(new int[]{5}, 5));
+    }
+
+    private static int binarySearch(int[] nums, int target) {
+
+        int lo = 0;
+        int hi = nums.length - 1;
+
+        while (lo <= hi) {
+
+            int mid = (lo + hi) / 2;
+
+            if (target == nums[mid]) {
+                return mid;
+
+            } else if (target < nums[mid]) {
+                hi = mid - 1;
+
+            } else {
+                lo = mid + 1;
+            }
+        }
+
+        return -1;
+    }
 }
