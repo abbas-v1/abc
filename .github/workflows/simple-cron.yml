@@ -1,0 +1,14 @@
+name: Simple Cron Job
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"  # Runs every 5 minutes
+  workflow_dispatch:        # Allows manual triggering
+
+jobs:
+  log-time:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Log current time
+      run: echo "Current time: $(date)"
