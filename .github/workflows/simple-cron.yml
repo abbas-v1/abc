@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Log current time
-      run: echo "Current time: $(date)"
+    - name: Log something to console
+      run: echo "It's working!"
